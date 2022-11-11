@@ -11,7 +11,7 @@ L(3) = Link ( [0 0 L3 0] );
 L(4) = Link ( [0 0 L4 0] );
 
 % Creating an object of the links 
-RobotArm = SerialLink(L)
+RobotArm = SerialLink(L);
 RobotArm.name = 'Hexacopter Arm';
 
 
