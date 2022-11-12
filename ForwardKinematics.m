@@ -10,19 +10,21 @@ L(2) = Link ( [0 0 L2 0] );
 L(3) = Link ( [0 0 L3 0] );
 L(4) = Link ( [0 0 L4 0] );
 
-% Creating an object of the DH-parameters 
-RobotArm = SerialLink(L);
-RobotArm.name = 'Hexacopter Arm';
+%Creating an object of the DH-parameters 
+robotArm = SerialLink(L);
+robotArm.name = 'Hexacopter Arm';
+
+%Creating zero angle variable
+qz = ([0 0 0 0]);
 
 %Attampt to recreate our arm
 import ETS3.*
-E = Rz('q1')*Tz(-L1)*Ry('q2')*Tx(L2)*Ry('q3')*Tx(L3)*Ry('q4')*Tx(L4);
+attamptArm = Rz('q1')*Tz(-L1)*Ry('q2')*Tx(L2)*Ry('q3')*Tx(L3)*Ry('q4')*Tx(L4);
 
+%Plotting both robot arms
+figure('Name','DH-Parameters')
+robotArm.plot(qz)
+figure('Name','Attampt arm')
+attamptArm.plot(qz)
 
-%Plotting both our arms 
-figure('Name','DH-parametets')
-RobotArm.plot([0 0 0 0])
-
-figure('Name','Attempt version')
-E.plot([0 0 0 0])
 
