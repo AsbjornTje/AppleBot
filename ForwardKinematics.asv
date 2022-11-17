@@ -1,16 +1,16 @@
 syms q1 q2 q3 q4
 
 %Defining link-lengths. All values [m]
-L1 = .04; L2 = .45; L3 = .45; L4 = .45; L5 = .07;
-
-%Creating zero angle variable
-qz = ([0 0 0 0]);
-qf1 = ([1.5 2.4 1.2 0.7])
-qf2 = ([0.65 1.39 -1.39 -0.77])
+% L1 = .04; L2 = .45; L3 = .45; L4 = .45; L5 = .07;
+% 
+% %Creating zero angle variable
+% qz = ([0 0 0 0]);
+% qf1 = ([1.5 2.4 1.2 0.7])
+% qf2 = ([0.65 1.39 -1.39 -0.77])
 
 %Attampt to recreate our arm
-import ETS3.*
-robotArm = Rz('q1')*Tz(-L1)*Ry('q2')*Tx(L2)*Ry('q3')*Tx(L3)*Ry('q4')*Tx(L4);
+import DHparamArm.*
+% robotArm = Rz('q1')*Tz(-L1)*Ry('q2')*Tx(L2)*Ry('q3')*Tx(L3)*Ry('q4')*Tx(L4);
 
 %robotArm = Rz('q1')*Tz(-L1)*Ry('q2')*Tx(L2)*Ry('q3')*Tx(L3)*Ry('q4')*Tx(L4);
 
