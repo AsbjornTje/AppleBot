@@ -1,0 +1,21 @@
+controller_list:
+  - name: fake_movement_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - base_joint
+      - Rev15
+      - Rev8
+      - Rev9
+      - Rev10
+      - Rev11
+  - name: fake_gripper_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - Rev12
+      - Rev13
+      - Rev14
+initial:  # Define initial robot poses.
+  - group: movement
+    pose: start
+  - group: gripper
+    pose: gripper_closed

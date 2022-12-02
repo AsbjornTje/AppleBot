@@ -1,0 +1,485 @@
+<?xml version="1.0" ?>
+<robot name="full" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<!--<xacro:include filename="$(find full_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find full_description)/urdf/full.trans" />
+<xacro:include filename="$(find full_description)/urdf/full.gazebo" />-->
+
+<link name="world"/>
+
+<joint name="base_joint" type="prismatic">
+  <parent link="world"/>
+  <child link="slider_v1_1"/>
+  <origin rpy="0 0 0" xyz="-1.0 -0.3 2.1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+  <limit upper="3" lower="-3" effort="100" velocity="100"/>
+</joint>
+
+<link name="orchard_v4_1">
+  <inertial>
+    <origin xyz="-0.0021897602804135186 0.00938123492456427 0.2722887983118014" rpy="0 0 0"/>
+    <mass value="181.4435964250298"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://full_description/meshes/orchard_v4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://full_description/meshes/orchard_v4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="root" type="fixed">
+  <parent link="world"/>
+  <child link="orchard_v4_1"/>
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+</joint>
+
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.0021897602804135186 0.00938123492456427 0.2722887983118014" rpy="0 0 0"/>
+    <mass value="181.4435964250298"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://full_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://full_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="arm_base_v7_1">
+  <inertial>
+    <origin xyz="-1.5639344419157708e-07 1.3067887084938778e-08 -0.014601256634869109" rpy="0 0 0"/>
+    <mass value="0.8016618792376357"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.001221 -0.0105 -0.30205" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://full_description/meshes/arm_base_v7_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="paint_metallic_black"/>
+  </visual>
+  <collision>
+    <origin xyz="0.001221 -0.0105 -0.30205" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://full_description/meshes/arm_base_v7_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Arm1_v5_1">
+  <inertial>
+    <origin xyz="0.13971252114810737 0.02594609213826877 -0.05085123617571785" rpy="0 0 0"/>
+    <mass value="8.514667585337152"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.001221 0.015447 -0.26705" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://full_description/meshes/Arm1_v5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="paint_metallic_dark_grey"/>
+  </visual>
+  <collision>
+    <origin xyz="0.001221 0.015447 -0.26705" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://full_description/meshes/Arm1_v5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Arm1_v5_2">
+  <inertial>
+    <origin xyz="0.14811317899671678 0.025945812138268465 -0.01295853300668337" rpy="0 0 0"/>
+    <mass value="8.514667585337152"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.289397 0.015447 -0.161274" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://full_description/meshes/Arm1_v5_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="paint_metallic_dark_grey"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.289397 0.015447 -0.161274" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://full_description/meshes/Arm1_v5_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Arm1_v5_3">
+  <inertial>
+    <origin xyz="0.14361316662252388 0.025945532138268133 0.03848108504601028" rpy="0 0 0"/>
+    <mass value="8.514667585337152"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.597489 0.015447 -0.134319" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://full_description/meshes/Arm1_v5_3.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="paint_metallic_dark_grey"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.597489 0.015447 -0.134319" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://full_description/meshes/Arm1_v5_3.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="GripperBase_v8_1">
+  <inertial>
+    <origin xyz="0.0203376847518143 -0.02505525478109976 0.029044629140177802" rpy="0 0 0"/>
+    <mass value="2.504922868632019"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.89622 -0.036446 -0.214364" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://full_description/meshes/GripperBase_v8_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="paint_metallic_silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.89622 -0.036446 -0.214364" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://full_description/meshes/GripperBase_v8_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Klo_v6_1">
+  <inertial>
+    <origin xyz="0.05073537239496895 -0.007836410105433114 0.013814515193589672" rpy="0 0 0"/>
+    <mass value="0.15649518536515106"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.961655 -0.019459 -0.235077" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://full_description/meshes/Klo_v6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="paint_metallic_black"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.961655 -0.019459 -0.235077" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://full_description/meshes/Klo_v6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Klo_v6_2">
+  <inertial>
+    <origin xyz="0.03167039990975096 0.0116061898122189 0.04113510807200471" rpy="0 0 0"/>
+    <mass value="0.15649518536515106"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.90483 -0.04383 -0.274866" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://full_description/meshes/Klo_v6_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="paint_metallic_black"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.90483 -0.04383 -0.274866" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://full_description/meshes/Klo_v6_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Klo_v6_3">
+  <inertial>
+    <origin xyz="0.02050911439567349 -0.003808243214495393 0.04890049028098836" rpy="0 0 0"/>
+    <mass value="0.15649518536515106"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.915954 0.028431 -0.267077" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://full_description/meshes/Klo_v6_3.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="paint_metallic_black"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.915954 0.028431 -0.267077" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://full_description/meshes/Klo_v6_3.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="slider_v1_1">
+  <inertial>
+    <origin xyz="-8.76553355728775e-08 -2.0816681711721685e-17 0.0005000000000000004" rpy="0 0 0"/>
+    <mass value="0.0006165375582670231"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.001221 -0.0105 -0.42445" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://full_description/meshes/slider_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin xyz="0.001221 -0.0105 -0.42445" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://full_description/meshes/slider_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rigid7" type="fixed">
+  <origin xyz="-0.001221 0.0105 0.30205" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="arm_base_v7_1"/>
+</joint>
+
+<joint name="Rev8" type="revolute">
+  <origin xyz="0.0 -0.025947 -0.035" rpy="0 0 0"/>
+  <parent link="arm_base_v7_1"/>
+  <child link="Arm1_v5_1"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+  <limit upper="1.22173" lower="-1.22173" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Rev9" type="revolute">
+  <origin xyz="0.290618 0.0 -0.105776" rpy="0 0 0"/>
+  <parent link="Arm1_v5_1"/>
+  <child link="Arm1_v5_2"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+  <limit upper="1.22173" lower="-1.22173" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Rev10" type="revolute">
+  <origin xyz="0.308092 0.0 -0.026955" rpy="0 0 0"/>
+  <parent link="Arm1_v5_2"/>
+  <child link="Arm1_v5_3"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+  <limit upper="1.22173" lower="-1.22173" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Rev11" type="revolute">
+  <origin xyz="0.298731 0.051893 0.080045" rpy="0 0 0"/>
+  <parent link="Arm1_v5_3"/>
+  <child link="GripperBase_v8_1"/>
+  <axis xyz="-0.0 -1.0 0.0"/>
+  <limit upper="1.22173" lower="-1.22173" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Rev12" type="revolute">
+  <origin xyz="0.065435 -0.016987 0.020713" rpy="0 0 0"/>
+  <parent link="GripperBase_v8_1"/>
+  <child link="Klo_v6_1"/>
+  <axis xyz="-0.0 -1.0 0.0"/>
+  <limit upper="0.5" lower="-0.785398" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Rev13" type="revolute">
+  <origin xyz="0.00861 0.007384 0.060502" rpy="0 0 0"/>
+  <parent link="GripperBase_v8_1"/>
+  <child link="Klo_v6_2"/>
+  <axis xyz="0.709406 0.5 -0.496732"/>
+  <limit upper="0.5" lower="-1.134464" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Rev14" type="revolute">
+  <origin xyz="0.019734 -0.064877 0.052713" rpy="0 0 0"/>
+  <parent link="GripperBase_v8_1"/>
+  <child link="Klo_v6_3"/>
+  <axis xyz="-0.709406 0.5 0.496732"/>
+  <limit upper="0.5" lower="-1.22173" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Rev15" type="continuous">
+  <origin xyz="-0.001221 0.0105 0.42445" rpy="0 0 0"/>
+  <parent link="slider_v1_1"/>
+  <child link="base_link"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+<transmission name="slider_v1_1_trans">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="base_joint">
+
+  <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="slider_v1_1_motor">
+
+  <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="base_link_trans">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev15">
+
+  <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="base_link_motor">
+
+  <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="arm1_v5_1_trans">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev8">
+
+  <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="arm1_v5_1_motor">
+
+  <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="arm1_v5_2_trans">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev9">
+
+  <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="arm1_v5_2_motor">
+
+  <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="arm1_v5_3_trans">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev10">
+
+  <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="arm1_v5_3_motor">
+
+  <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="GripperBase_v8_1_trans">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev11">
+
+  <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="GripperBase_v8_1_motor">
+
+  <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Klo_v6_1_trans">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev12">
+
+  <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Klo_v6_1_motor">
+
+  <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Klo_v6_2_trans">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev13">
+
+  <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Klo_v6_2_motor">
+
+  <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Klo_v6_3_trans">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev14">
+
+  <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Klo_v6_3_motor">
+
+  <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<gazebo>
+  <plugin name="control"
+filename="libgazebo_ros_control.so">
+    <robotNamespace>/</robotNamespace>
+  </plugin>
+</gazebo>
+
+<gazebo reference="base_link">
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="arm1_v5_1">
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="arm1_v5_2">
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="arm1_v5_3">
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="GripperBase_v8_1">
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="Klo_v6_1">
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="Klo_v6_2">
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="Klo_v6_3">
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+
+
+
+
+
+</robot>
