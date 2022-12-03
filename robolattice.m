@@ -1,4 +1,4 @@
-clear;
+clear;ru
 clc;
 %create the roadmap:
 road = zeros(70, 100)
