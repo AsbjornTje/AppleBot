@@ -84,11 +84,11 @@ grid on
 %RobotArm.teach
 t = [0:0.05:2];
 
-qStep1 = [0 -pi/2 0 0 0];                                            % flying position without fruit     
-qStep2 = [0 -pi/2 deg2rad(60) deg2rad(60)  deg2rad(30)];             % fruit detected
-qStep3 = qFruit;                                                     % reaching fruit
-qStep4 = [0 -pi/2 deg2rad(60) deg2rad(60)  deg2rad(30)];             % picking fruit                                       % picking the fruit
-qStep5 = [0 -pi/2 0 0  0];                                           % flying position with fruit
+qStep1 = [0 -pi/2 0 0 0];                                      % flying position without fruit     
+qStep2 = [0 -pi/2 deg2rad(60) deg2rad(60)  deg2rad(30)];       % fruit detected
+qStep3 = qFruit;                                               % reaching fruit
+qStep4 = [0 -pi/2 deg2rad(60) deg2rad(60)  deg2rad(30)];       % picking fruit
+qStep5 = [0 -pi/2 0 0  0];                                     % flying position with fruit
                                 
 
 %Trajectory planing joint space
