@@ -1,4 +1,5 @@
-# Weekly log
+Weekly log
+
 Week 39 (Sept): Kinematics and mathematical model for the mobile base.
 Participants: Eskil Digernes, Asbjørn Tjensvold, Joakim Johansen, Stian Flåten, Magnus Anthun
 
@@ -11,36 +12,28 @@ Week 41 (Oct): No work on the semester project.
 
 
 Week 42 (Oct): Forward and inverse kinematics, path and trajectory, started on the controller.
-Participants: Eskil Digernes, Asbjørn Tjensvold, Joakim Johansen, Stian                
-Flåten, Magnus Anthun
+Participants: Eskil Digernes, Asbjørn Tjensvold, Joakim Johansen, Stian Flåten, Magnus Anthun
 
 Week 43 (Oct): Controller, introduction and design process on the report.
-		Participants: Eskil Digernes, Asbjørn Tjensvold, Joakim Johansen, Stian                
-Flåten, Magnus Anthun
+Participants: Eskil Digernes, Asbjørn Tjensvold, Joakim Johansen, Stian Flåten, Magnus Anthun
 
 Week 44 (Oct/Nov): CDR. Further work on navigation, Forward kinematics and DH-parameters, Transformation mapping, ROS and implementation in Gazebo, PID.
-		Participants: Eskil Digernes, Asbjørn Tjensvold, Joakim Johansen, Stian                
-Flåten, Magnus Anthun
+Participants: Eskil Digernes, Asbjørn Tjensvold, Joakim Johansen, Stian Flåten, Magnus Anthun
 
 Week 45 (Nov): Further work on the Arm kinematics, redesign of the arm and mobile base, ROS and Gazebo.
-		Participants: Eskil Digernes, Asbjørn Tjensvold, Joakim Johansen, Stian                
-Flåten, Magnus Anthun
+Participants: Eskil Digernes, Asbjørn Tjensvold, Joakim Johansen, Stian Flåten, Magnus Anthun
 
 Week 46 (Nov): Work regarding the final presentation. Further work on forward and inverse kinematics, PID-controlled navigation in Gazebo, final design on the robot arm and mobile base.
-		Participants: Eskil Digernes, Asbjørn Tjensvold, Joakim Johansen, Stian                
-Flåten, Magnus Anthun
+Participants: Eskil Digernes, Asbjørn Tjensvold, Joakim Johansen, Stian Flåten, Magnus Anthun
 
 Week 47 (Nov): A little work in Gazebo, Arm kinematics, Controller.
-		Participants: Eskil Digernes, Asbjørn Tjensvold, Joakim Johansen, Stian                
-Flåten, Magnus Anthun
+Participants: Eskil Digernes, Asbjørn Tjensvold, Joakim Johansen, Stian Flåten, Magnus Anthun
 
 Week 48 (Nov/Dec): Moveit and arm kinematics in Gazebo, work on report, Controller.
-		Participants: Eskil Digernes, Asbjørn Tjensvold, Joakim Johansen, Stian                
-Flåten, Magnus Anthun
+Participants: Eskil Digernes, Asbjørn Tjensvold, Joakim Johansen, Stian Flåten, Magnus Anthun
 
 Week 49 (Dec): Finalized the work on the controller and the report.
-		Participants: Eskil Digernes, Asbjørn Tjensvold, Joakim Johansen, Stian                
-Flåten, Magnus Anthun
+Participants: Eskil Digernes, Asbjørn Tjensvold, Joakim Johansen, Stian Flåten, Magnus Anthun
 
 Participants main tasks:
 		Asbjørn Tjensvold: ROS and Gazebo
