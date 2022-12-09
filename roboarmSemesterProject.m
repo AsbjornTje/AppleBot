@@ -51,6 +51,7 @@ T45 = [cos(Q5), -sin(Q5), 0, 7/100;
 T05Manually = T01*T12*T23*T34*T45
 T05dh = RobotArm.fkine(qz)
 qFromInverseKinematics = RobotArm.ikine(T05dh, 'mask', [1 1 1 0 0 0])
+
 %% Transformation
 %{B} => Base;   {C} => Camera;  {F} => Fruit;
 R = eye(3);
@@ -67,8 +68,10 @@ bTc = rt2tr(R, bPc)
 cPf = [1.16 0 -.7];
 cTf = rt2tr(R, cPf)
 bTf = bTc*cTf
+
 %finding angles
 qFruit = RobotArm.ikine(bTf,'mask',[1 1 1 0 0 0])
+
 %base frame 
 hold on
 trplot(eye(3),'color','r','frame','B')
@@ -80,6 +83,7 @@ trplot(bTc,'color','b','frame','C')
 trplot(bTf,'color','k','frame','F')
 RobotArm.plot(qFruit)
 grid on
+
 %% Trajectory planning 
 %RobotArm.teach
 t = [0:0.05:2];
@@ -100,10 +104,11 @@ qi4 = mtraj(@lspb, qStep4(end,:), qStep5(1,:), t);
 Q = [qi1; qi2; qi3; qi4;];
 
 RobotArm.plot(Q)
+
 %% Differential Kinematics
  
-%Defining 200g (2N) on end-effector
-w0 = [0 0 2 0 0 0]';
+%Defining 400g (4N) on end-effector
+w0 = [0 0 4 0 0 0]';
 
 %Defining jacob0 matrix
 qJacbi = RobotArm.jacob0(qFruit)'*w0;
